@@ -1,6 +1,6 @@
 import React from "react";
-import "./Menu.scss";
 
+import "./Menu.scss";
 import { Navbar, Button}  from "react-bootstrap";
 
 const Menu: React.FC = () => {

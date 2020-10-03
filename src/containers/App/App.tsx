@@ -5,7 +5,7 @@ import "./App.scss";
 import { Container } from "react-bootstrap";
 
 import Header from "../Header/Header";
-import Menu from "../../components/Menu/Menu"
+import Menu from "../../components/Menu/Menu";
 
 const App: React.FC = () => {
   const { t, i18n } = useTranslation();

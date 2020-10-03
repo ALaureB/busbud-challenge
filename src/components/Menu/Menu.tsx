@@ -1,17 +1,16 @@
 import React from "react";
 import "./Menu.scss";
 
-import Navbar from "react-bootstrap/Navbar";
+import { Navbar, Button}  from "react-bootstrap";
 
 const Menu: React.FC = () => {
   return (
     <Navbar>
-      <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+      <Navbar.Brand href="#">Bosheaga</Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
-        <Navbar.Text>
-          Signed in as: <a href="#login">Mark Otto</a>
-        </Navbar.Text>
+        <Button variant="link">FR</Button>
+        <Button variant="link">EN</Button>
       </Navbar.Collapse>
     </Navbar>
   );

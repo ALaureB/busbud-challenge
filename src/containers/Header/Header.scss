@@ -1,0 +1,16 @@
+@import "../App/App.scss";
+
+.bosheaga-header {
+    background-image: url("../../assets/Bosheaga_banner_EN.png");
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 100vh;
+
+    @include sm {
+        background-image: url("../../assets/Bosheaga_mobile_banner_EN.png");
+    }
+}

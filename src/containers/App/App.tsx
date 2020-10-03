@@ -2,11 +2,12 @@ import React from "react";
 import "./App.scss";
 
 import Container from "react-bootstrap/Container";
+import Header from "../Header/Header";
 
 const App: React.FC = () => {
   return (
-    <Container className="busbud-app">
-      <h1>Busbud challenge</h1>
+    <Container fluid className="bosheaga-app p-0">
+      <Header />
     </Container>
   );
 };

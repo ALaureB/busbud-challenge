@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './containers/App/App';
 import * as serviceWorker from './serviceWorker';
+// eslint-disable-next-line
+import './i18n';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+
+import App from './containers/App/App';
 
 ReactDOM.render(
   <React.StrictMode>

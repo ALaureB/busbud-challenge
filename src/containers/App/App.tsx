@@ -5,12 +5,14 @@ import { Container } from "react-bootstrap";
 
 import Header from "../Header/Header";
 import Presentation from "../../components/Presentation/Presentation";
+import SearchSection from "../SearchSection/SearchSection";
 
 const App: React.FC = () => {
   return ( 
       <Container fluid className="bosheaga-app p-0">
         <Header />
         <Presentation />
+        <SearchSection />
       </Container>
   );
 };

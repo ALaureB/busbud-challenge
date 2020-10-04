@@ -18,7 +18,7 @@ const Menu: React.FC = () => {
   };
 
   return (
-    <Navbar>
+    <Navbar sticky="top">
       <Navbar.Brand href="#">Bosheaga</Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">

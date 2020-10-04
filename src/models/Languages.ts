@@ -9,7 +9,7 @@ export class Language {
 
     static getLanguages(): Language[]
     {
-        return [new Language("fr-FR", "French"), new Language("en-CA", "English")]
+        return [new Language("fr-FR", "FRENCH_LANGUAGE"), new Language("en-CA", "ENGLISH_LANGUAGE")]
     }
 
     isLanguageActive(currentLanguage: string): boolean {

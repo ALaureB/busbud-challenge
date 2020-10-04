@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import el from "date-fns/locale/el";
+import { useTranslation } from "react-i18next";
+import DatePicker, { registerLocale } from "react-datepicker";
+import {enCA, frCA} from 'date-fns/esm/locale';
 
 import "react-datepicker/dist/react-datepicker.css";
 
 import "./DepartureDatePicker.scss";
+
+registerLocale("en", enCA);
+registerLocale("fr", frCA);
 
 interface IDepartureDatePickerProps {
   date: Date;
@@ -20,11 +24,14 @@ const DepartureDatePicker: React.FC<IDepartureDatePickerProps> = ({
   changeDate,
 }) => {
   const [currentDate, setCurrentDate] = useState<any>(date);
+  const { i18n } = useTranslation();
+
   return (
     <DatePicker
       selected={currentDate}
       minDate={date}
       maxDate={endFestivalDate}
+      locale={i18n.language}
       onChange={(date) => {
         setCurrentDate(date);
         changeDate(date);

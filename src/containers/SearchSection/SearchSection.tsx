@@ -37,7 +37,7 @@ const SearchSection: React.FC = () => {
 
   const { t } = useTranslation();
 
-  const changeDepartureDestination = (destination: Destination) => {
+  function changeDepartureDestination(destination: Destination) {
     setDeparture({
       ...departure,
       selectedDestination: destination,
@@ -48,20 +48,18 @@ const SearchSection: React.FC = () => {
         destination
       )[0],
     });
-  };
+  }
 
-  const changeArrivalDestination = (destination: Destination) => {
+  function changeArrivalDestination(destination: Destination) {
     setArrival({
       ...arrival,
       selectedDestination: destination,
     });
-  };
+  }
 
-  const changeDepartureDate = (newDate: Date) => {
+  function changeDepartureDate(newDate: Date) {
     setDepartureDate(newDate);
-    console.log(newDate);
-    console.log(departureDate);
-  };
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,7 +67,7 @@ const SearchSection: React.FC = () => {
         getXDeparturesFetchURL(
           departure.selectedDestination.geohash,
           arrival.selectedDestination.geohash,
-          "2020-10-12"
+          departureDate.toISOString().substring(0, 10)
         ),
         {
           params: {
@@ -130,7 +128,6 @@ const SearchSection: React.FC = () => {
           date={new Date(2020, 9, 9)}
           changeDate={changeDepartureDate}
         />
-        {departureDate.toISOString()}
       </Col>
 
       {/* Number of passengers */}

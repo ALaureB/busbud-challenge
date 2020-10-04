@@ -13,9 +13,9 @@ const langs: Lang[] = Lang.getLangs();
 const Menu: React.FC = () => {
   const { i18n } = useTranslation();
 
-  const changeLang = (lang: Lang) => {
+  function changeLang(lang: Lang) {
     i18n.changeLanguage(lang.value);
-  };
+  }
 
   return (
     <Navbar sticky="top">

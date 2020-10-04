@@ -8,22 +8,22 @@ import { Destination } from "../../models/Destination";
 import "./SearchSection.scss";
 import { Row, Col, Dropdown, Button } from "react-bootstrap";
 
-interface IDeparture {
-  destinations: Destination[];
-  selectedDestination: Destination;
-}
+import Label from "../../components/Label/Label";
+import DestinationDropdownToggle from "../../components/DestinationDropdownToggle/DestinationDropdownToggle";
+import DestinationDropdownItem from "../../components/DestinationDropdownItem/DestinationDropdownItem";
 
-interface IArrival {
+export interface IDestinationFull {
   destinations: Destination[];
   selectedDestination: Destination;
 }
 
 const SearchSection: React.FC = () => {
-  const [departure, setDeparture] = useState<IDeparture>({
+  const [departure, setDeparture] = useState<IDestinationFull>({
     destinations: Destination.getBosheagaDestinations(),
     selectedDestination: Destination.getBosheagaDestinations()[0],
   });
-  const [arrival, setArrival] = useState<IArrival>({
+
+  const [arrival, setArrival] = useState<IDestinationFull>({
     destinations: Destination.getBosheagaArrivalDestinations(
       departure.selectedDestination
     ),
@@ -34,10 +34,34 @@ const SearchSection: React.FC = () => {
 
   const { t } = useTranslation();
 
+  const changeDepartureDestination = (destination: Destination) => {
+    setDeparture({
+      ...departure,
+      selectedDestination: destination,
+    });
+    setArrival({
+      destinations: Destination.getBosheagaArrivalDestinations(destination),
+      selectedDestination: Destination.getBosheagaArrivalDestinations(
+        destination
+      )[0],
+    });
+  };
+
+  const changeArrivalDestination = (destination: Destination) => {
+    setArrival({
+      ...arrival,
+      selectedDestination: destination,
+    });
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await axiosRequest.get(
-        getXDeparturesFetchURL(departure.selectedDestination.geohash, arrival.selectedDestination.geohash, "2020-10-12"),
+        getXDeparturesFetchURL(
+          departure.selectedDestination.geohash,
+          arrival.selectedDestination.geohash,
+          "2020-10-12"
+        ),
         {
           params: {
             adult: 1,
@@ -54,74 +78,55 @@ const SearchSection: React.FC = () => {
     <Row className="search-section">
       {/* Departure city */}
       <Col xs={12} md>
-        <label>{t("DEPARTURE_CITY")}</label>
+        <Label translationKey={"DEPARTURE_CITY"}/>
         <Dropdown>
-          <Dropdown.Toggle>
-            {departure.selectedDestination
-              ? departure.selectedDestination.value
-              : t("SELECT_CITY")}
-          </Dropdown.Toggle>
-
+          <DestinationDropdownToggle destinationFull={departure} />
           <Dropdown.Menu>
-            {departure.destinations.map((destination: Destination) => (
-              <Dropdown.Item
-                onClick={() => {
-                  setDeparture({
-                    ...departure,
-                    selectedDestination: destination,
-                  });
-                  setArrival({
-                    destinations: Destination.getBosheagaArrivalDestinations(
-                      destination
-                    ),
-                    selectedDestination: Destination.getBosheagaArrivalDestinations(
-                      destination
-                    )[0],
-                  });
-                }}
-              >
-                {destination.value}
-              </Dropdown.Item>
-            ))}
+            {departure.destinations.map(
+              (destination: Destination, index: number) => (
+                <DestinationDropdownItem
+                  destination={destination}
+                  changeDestination={changeDepartureDestination}
+                  key={index}
+                />
+              )
+            )}
           </Dropdown.Menu>
         </Dropdown>
       </Col>
 
       {/* Arrival city */}
       <Col xs={12} md>
-        <label>{t("ARRIVAL_CITY")}</label>
+        <Label translationKey={"ARRIVAL_CITY"}/>
         <Dropdown>
-          <Dropdown.Toggle>
-            {arrival.selectedDestination
-              ? arrival.selectedDestination.value
-              : t("SELECT_CITY")}
-          </Dropdown.Toggle>
-
+          <DestinationDropdownToggle destinationFull={arrival} />
           <Dropdown.Menu>
-            {arrival.destinations.map((destination: Destination) => (
-              <Dropdown.Item
-                onClick={() => {
-                  setArrival({
-                    ...departure,
-                    selectedDestination: destination,
-                  });
-                }}
-              >
-                {destination.value}
-              </Dropdown.Item>
-            ))}
+            {arrival.destinations.map(
+              (destination: Destination, index: number) => (
+                <DestinationDropdownItem
+                  destination={destination}
+                  changeDestination={changeArrivalDestination}
+                  key={index}
+                />
+              )
+            )}
           </Dropdown.Menu>
         </Dropdown>
       </Col>
 
+      {/* Date */}
       <Col xs={12} md>
-        <label>{t("DATE")}</label>
+        <Label translationKey={"DATE"}/>
       </Col>
+
+      {/* Number of passengers */}
       <Col xs={12} md>
-        <label>{t("NUMBER_OF_PASSENGERS")}</label>
+        <Label translationKey={"NUMBER_OF_PASSENGERS"}/>
       </Col>
+
+      {/* Search */}
       <Col xs={12} md>
-        <label>{t("SEARCH")}</label>
+        <Label translationKey={"SEARCH"}/>
       </Col>
     </Row>
   );

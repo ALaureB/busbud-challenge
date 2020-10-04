@@ -37,7 +37,7 @@ const SearchSection: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axiosRequest.get(
-        getXDeparturesFetchURL("dr5reg", "drt2yz", "2020-10-12"),
+        getXDeparturesFetchURL(departure.selectedDestination.geohash, arrival.selectedDestination.geohash, "2020-10-12"),
         {
           params: {
             adult: 1,

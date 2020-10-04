@@ -1,30 +1,30 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { Language } from "../../models/Languages";
+import { Lang } from "../../models/Lang";
 
 import "./MenuItem.scss";
 import { Button } from "react-bootstrap";
 
 interface IMenuItemProps {
-  language: Language;
-  changeLanguage: ChangeLanguage;
+  lang: Lang;
+  changeLang: ChangeLang;
 }
 
-type ChangeLanguage = (language: Language) => void;
+type ChangeLang = (lang: Lang) => void;
 
-const MenuItem: React.FC<IMenuItemProps> = ({ language, changeLanguage}) => {
+const MenuItem: React.FC<IMenuItemProps> = ({ lang, changeLang}) => {
   const { t, i18n } = useTranslation();
 
   return (
     <Button
-      className={language.isLanguageActive(i18n.language) ? "active" : ""}
+      className={lang.isLangActive(i18n.language) ? "active" : ""}
       variant="link"
       onClick={() => {
-        changeLanguage(language);
+        changeLang(lang);
       }}
     >
-      {t(language.keyTranslation)}
+      {t(lang.keyTranslation)}
     </Button>
   );
 };

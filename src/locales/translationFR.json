@@ -1,5 +1,11 @@
 {
-  "ENGLISH_LANGUAGE": "Anglais",
-  "FRENCH_LANGUAGE": "Français",
-  "WEBSITE_PRESENTATION": "Vous habitez à New-York et vous souhaitez vous rendre à Bosheaga ? Ce site vous permettra de trouver en quelques clics les trajets disponibles pour vous rendre au festival. RDV tout bientôt pour profiter de notre programmation du tonnerre."
+  "ENGLISH_LANG": "Anglais",
+  "FRENCH_LANG": "Français",
+  "WEBSITE_PRESENTATION": "Vous habitez à New-York et vous souhaitez vous rendre à Bosheaga ? Ce site vous permettra de trouver en quelques clics les trajets disponibles pour vous rendre au festival. RDV tout bientôt pour profiter de notre programmation du tonnerre.",
+  "SELECT_CITY": "Sélectionner une ville",
+  "DEPARTURE_CITY": "Ville de départ",
+  "ARRIVAL_CITY": "Ville d'arrivée",
+  "DATE": "Date",
+  "NUMBER_OF_PASSENGERS": "Nombre de passers",
+  "SEARCH": "Rechercher"
 }

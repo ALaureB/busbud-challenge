@@ -1,2 +1,11 @@
 @import "../App/App.scss";
 
+.search-section {
+    padding: 0 2rem 2rem 2rem;
+
+    label {
+        color: $pumpkin;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+}

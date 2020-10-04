@@ -11,4 +11,8 @@ export class Language {
     {
         return [new Language("fr-FR", "French"), new Language("en-CA", "English")]
     }
+
+    isLanguageActive(currentLanguage: string): boolean {
+        return currentLanguage === this.value;
+    }
 }

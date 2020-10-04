@@ -13,11 +13,12 @@ interface IMenuItemProps {
 
 type ChangeLanguage = (language: Language) => void;
 
-const MenuItem: React.FC<IMenuItemProps> = ({ language, changeLanguage }) => {
-  const { t } = useTranslation();
+const MenuItem: React.FC<IMenuItemProps> = ({ language, changeLanguage}) => {
+  const { t, i18n } = useTranslation();
 
   return (
     <Button
+      className={language.isLanguageActive(i18n.language) ? "active" : ""}
       variant="link"
       onClick={() => {
         changeLanguage(language);

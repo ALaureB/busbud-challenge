@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Language } from "../../models/Languages";
 
 import "./Menu.scss";
-import { Navbar }  from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 
 import MenuItem from "../MenuItem/MenuItem";
 
@@ -12,7 +12,7 @@ const languages: Language[] = Language.getLanguages();
 
 const Menu: React.FC = () => {
   const { i18n } = useTranslation();
-  
+
   const changeLanguage = (language: Language) => {
     i18n.changeLanguage(language.value);
   };
@@ -22,8 +22,13 @@ const Menu: React.FC = () => {
       <Navbar.Brand href="#">Bosheaga</Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
-        <MenuItem language={languages[0]} changeLanguage ={changeLanguage} />
-        <MenuItem language={languages[1]} changeLanguage ={changeLanguage} />
+        {languages.map((language: Language, index: number) => (
+          <MenuItem
+            language={language}
+            changeLanguage={changeLanguage}
+            key={index}
+          />
+        ))}
       </Navbar.Collapse>
     </Navbar>
   );

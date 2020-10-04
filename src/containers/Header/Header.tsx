@@ -2,8 +2,14 @@ import React from "react";
 
 import "./Header.scss";
 
-const Header: React.FC = () => {
-  return <div className="bosheaga-header"></div>;
+import Menu from "../../components/Menu/Menu";
+
+const Header: React.FC = () => { 
+  return (
+    <div id="bosheaga-header">
+      <Menu />
+    </div>
+  );
 };
 
 export default Header;

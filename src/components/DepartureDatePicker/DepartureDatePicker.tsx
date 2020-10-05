@@ -17,6 +17,7 @@ interface IDepartureDatePickerProps {
 
 type ChangeDate = (newDate: any) => void;
 
+const beginingFestivalDate = new Date(2020, 9, 9);
 const endFestivalDate = new Date(2020, 9, 11);
 
 const DepartureDatePicker: React.FC<IDepartureDatePickerProps> = ({
@@ -29,7 +30,7 @@ const DepartureDatePicker: React.FC<IDepartureDatePickerProps> = ({
   return (
     <DatePicker
       selected={currentDate}
-      minDate={date}
+      minDate={beginingFestivalDate}
       maxDate={endFestivalDate}
       locale={i18n.language}
       onChange={(date) => {

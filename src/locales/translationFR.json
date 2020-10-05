@@ -6,6 +6,12 @@
   "DEPARTURE_CITY": "Ville de départ",
   "ARRIVAL_CITY": "Ville d'arrivée",
   "DATE": "Date",
-  "NUMBER_OF_PASSENGERS": "Nombre de passers",
+  "PASSENGERS": "Passager(s)",
+  "ADULT": "Adulte",
+  "ADULTS": "Adultes",
+  "CHILD": "Enfant",
+  "CHILDREN": "Enfants",
+  "SENIOR": "Sénior",
+  "SENIORS": "Séniors",
   "SEARCH": "Rechercher"
 }

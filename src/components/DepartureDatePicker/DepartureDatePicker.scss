@@ -1,2 +1,15 @@
 @import "../../containers/App/App.scss";
 
+.react-datepicker__input-container {
+    input {
+        border: 1px solid $pumpkin;
+        border-radius: 0;
+        height: 2.5rem;
+        padding: 0 2rem;
+
+        &:focus {
+            border: 1px solid $pumpkin;
+            border-radius: 0;
+        }
+    }
+}

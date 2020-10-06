@@ -15,6 +15,9 @@ Project is created with:
 * Node Sass (version 4.14.1).
 * Bootstrap (version 4.5.2) & react-bootstrap (version 1.3.0).
 * i18next (version 19.8.0).
+* i18next (version 19.8.0).
+* Moment (version 2.29.0).
+* React-datepicker (version 3.2.2).
 
 ## Setup
 To run this project, install it locally using npm or yarn.

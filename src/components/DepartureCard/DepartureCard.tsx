@@ -21,22 +21,21 @@ const DepartureCard: React.FC<IDepartureCardProps> = ({
   price,
 }) => {
   return (
-    <Card className="col-md-4 col-sm-6 col-xs-12 m-3">
+    <Card className="m-3 departure-card" style={{ width: '14rem', height: "auto" }}>
       <Card.Body>
         <Card.Text>
           <Row>
             <Col>
-              <div>{departureLocation}</div>
-              <div>{moment.utc(departureTime).format("LT")}</div>
+              <h5>{departureLocation}</h5>
+              <p>{moment.utc(departureTime).format("LT")}</p>
             </Col>
             <Col>
-              <div>{arrivalLocation}</div>
-              <div>{moment.utc(arrivalTime).format("LT")}</div>
-              
+              <h5>{arrivalLocation}</h5>
+              <p>{moment.utc(arrivalTime).format("LT")}</p>             
             </Col>
           </Row>
           <Row>
-            <Col>{price}</Col>
+            <Col><label>{price}</label></Col>
           </Row>
         </Card.Text>
       </Card.Body>

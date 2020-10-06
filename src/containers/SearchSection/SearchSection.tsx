@@ -306,7 +306,7 @@ const SearchSection: React.FC = () => {
           </Button>
         </Col>
       </Row>
-      <Row className="mt-3 text-center">
+      <Row className="mt-3 d-flex justify-content-around no-gutters">
         {departureQueryResponse.departures.length > 0 &&
           departureQueryResponse.departures.map(
             (departure: XDeparture, index: number) => (

@@ -10,6 +10,6 @@ export const axiosRequest = axios.create({
   },
 });
 
-export function departuresQueryBuilder(origin: string, destination: string, date: string, numberOfPassengers: INumberOfPassengers, lang: string): string {
-    return `/x-departures/${origin}/${destination}/${date}?&adult=${numberOfPassengers.adults}&child=${numberOfPassengers.children}&senior=${numberOfPassengers.seniors}&lang=${lang}`
+export function departuresQueryBuilder(origin: string, destination: string, date: string, numberOfPassengers: INumberOfPassengers, lang: string, currency: string): string {
+    return `/x-departures/${origin}/${destination}/${date}?&adult=${numberOfPassengers.adults}&child=${numberOfPassengers.children}&senior=${numberOfPassengers.seniors}&lang=${lang}&currency=${currency}`
 }

@@ -7,6 +7,7 @@ import { Button } from "react-bootstrap";
 interface IPassengerCounterProps {
   label: string;
   updateCounter: UpdateCounter;
+  disable: boolean;
 }
 
 type UpdateCounter = (count: number) => void;
@@ -14,6 +15,7 @@ type UpdateCounter = (count: number) => void;
 const PassengerCounter: React.FC<IPassengerCounterProps> = ({
   label,
   updateCounter,
+  disable
 }) => {
   const [count, setCount] = useState(0);
   const { t } = useTranslation();
@@ -31,6 +33,7 @@ const PassengerCounter: React.FC<IPassengerCounterProps> = ({
           onClick={() => {
             setCount(count + 1);
           }}
+          disabled={disable}
         >
           +
         </Button>

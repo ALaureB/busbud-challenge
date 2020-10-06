@@ -13,5 +13,8 @@
   "CHILDREN": "Enfants",
   "SENIOR": "Sénior",
   "SENIORS": "Séniors",
-  "SEARCH": "Rechercher"
+  "SEARCH": "Rechercher",
+  "CURRENCY": "Monnaie",
+  "CURRENCY_EUR": "Euros",
+  "CURRENCY_USD": "Dollars"
 }

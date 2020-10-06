@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import DatePicker, { registerLocale } from "react-datepicker";
-import {enCA, frCA} from 'date-fns/esm/locale';
+import { enCA, frCA } from 'date-fns/esm/locale';
 
 import "react-datepicker/dist/react-datepicker.css";
 

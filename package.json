@@ -49,5 +49,10 @@
   },
   "devDependencies": {
     "@types/bootstrap": "^4.5.0"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/!node_modules\\/date-fns/"
+    ]
   }
 }

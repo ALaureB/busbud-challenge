@@ -9,10 +9,7 @@ const Presentation: React.FC = () => {
 
   return (
     <Row className="presentation">
-      <Col xs={12} md={4} className="d-flex align-items-center">
-        To do mettre une image ou une illustration.    
-      </Col>
-      <Col xs={12} md={8}>
+      <Col xs={12}>
         <h4>{t("WEBSITE_PRESENTATION")}</h4>
       </Col>
     </Row>

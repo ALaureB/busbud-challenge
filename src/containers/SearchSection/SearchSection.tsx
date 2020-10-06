@@ -315,7 +315,7 @@ const SearchSection: React.FC = () => {
                 departureTime={departure.departure_time}
                 arrivalLocation={departure.destinationLocation.name}
                 arrivalTime={departure.arrival_time}
-                price={"test"}
+                price={`${(departure.prices.total / 100).toFixed(2)} ${currency.value}`}
               />
             )
           )}

@@ -48,10 +48,4 @@ export class XDeparture {
     this.departure_time = departure_time;
     this.arrival_time = arrival_time;
   }
-
-  getPriceString(currency: Currency): string {
-    // let price = ((<number>this.prices.total) / 100).toFixed(2);
-    // return `${price} ${currency.value}`;
-    return "coucou";
-  }
 }

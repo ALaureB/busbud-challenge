@@ -1,5 +1,7 @@
 import React from "react";
 
+import moment from 'moment';
+
 import "./DepartureCard.scss";
 import { Card, Row, Col } from "react-bootstrap";
 
@@ -25,11 +27,12 @@ const DepartureCard: React.FC<IDepartureCardProps> = ({
           <Row>
             <Col>
               <div>{departureLocation}</div>
-              <div>{departureTime}</div>
+              <div>{moment.utc(departureTime).format("LT")}</div>
             </Col>
             <Col>
-              {arrivalLocation}
-              {arrivalTime}
+              <div>{arrivalLocation}</div>
+              <div>{moment.utc(arrivalTime).format("LT")}</div>
+              
             </Col>
           </Row>
           <Row>
